@@ -84,7 +84,8 @@ public abstract class View extends JFrame {
 
 	public abstract void init();
 
-	public abstract void translate();
+	public void translate() {
+	};
 
 	public void setController(Controller controller) {
 		removeController();

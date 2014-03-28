@@ -48,9 +48,9 @@ public class ControllerViewConfig extends Controller {
 	@Override
 	public void action(Object source) {
 		if (source.equals(viewConfig))
-			exit();
+			close();
 		else if (source.equals(viewConfig.getBtnClose()))
-			exit();
+			close();
 		else if (source.equals(viewConfig.getCmbLanguages()))
 			changeLanguage();
 		else if (source.equals(viewConfig.getSpnFPS()))
@@ -99,7 +99,7 @@ public class ControllerViewConfig extends Controller {
 		}
 	}
 
-	public void exit() {
+	public void close() {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
