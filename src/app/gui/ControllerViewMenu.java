@@ -46,7 +46,13 @@ public class ControllerViewMenu extends Controller {
 	}
 
 	public void start() {
-
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				new ControllerViewGame();
+				viewMenu.dispose();
+			}
+		});
 	}
 
 	public void exit() {

@@ -12,6 +12,8 @@ GUI_SOUNDEFFECTS=Sound effects
 GUI_SAVE=Save
 GUI_CLOSE=Close
 GUI_ERROR=Error
+GUI_PAUSE=Pause
+GUI_MENU=Menu
 GUI_APPDESCRIP=<html>Game 2D very simple, inspired by the Battle City game developed by NAMCO. THE objective of the game is to destroy enemy tanks, the Fuzzy Logic proposed by Lofti Zadeh is used to establish the damage caused by the shells of tanks. The library used for fuzzy calculations is jFuzzyLogic http://jfuzzylogic.sourceforge.net/</html>
 
 LOG_GAMESTARTED=Game started

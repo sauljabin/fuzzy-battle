@@ -12,6 +12,8 @@ GUI_SOUNDEFFECTS=Efectos de sonido
 GUI_SAVE=Guardar
 GUI_CLOSE=Cerrar
 GUI_ERROR=Error
+GUI_PAUSE=Pausa
+GUI_MENU=Menú
 GUI_APPDESCRIP=<html>Juego 2D muy sencillo, inspirado en el juego Battle City desarrollado por NAMCO. EL objetivo del juego es destruir los tanques enemigos, se emplea la Lógica Difusa propuesta por Lofti Zadeh para establecer el daño que causan los proyectiles sobre los tanques. La libreria usada para los calculos difusos es jFuzzyLogic http://jfuzzylogic.sourceforge.net/</html>
 
 LOG_GAMESTARTED=Juego iniciado
