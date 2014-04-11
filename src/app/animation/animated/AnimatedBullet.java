@@ -24,13 +24,12 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.Shape;
-import java.io.File;
 
-import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 import app.Config;
 import app.animation.Animated;
+import app.util.UtilSound;
 
 public class AnimatedBullet extends Animated {
 
@@ -86,9 +85,15 @@ public class AnimatedBullet extends Animated {
 			@Override
 			public void run() {
 				try {
-					Clip sound = AudioSystem.getClip();
-					sound.open(AudioSystem.getAudioInputStream(new File("sound/tank-firing.wav")));
-					sound.start();					
+					Clip sound = UtilSound.getClip("sound/tank-firing.wav");
+					if (sound != null)
+						sound.start();
+
+					if (Config.get("OS").toLowerCase().contains("linux")) {
+						Thread.sleep(1000);
+						sound.close();
+					}
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -124,7 +129,7 @@ public class AnimatedBullet extends Animated {
 					} else if (animated instanceof AnimatedBase) {
 						AnimatedBase base = (AnimatedBase) animated;
 						base.setDestroy(true);
-						AnimatedGameOver animatedGameOver= new AnimatedGameOver(false);
+						AnimatedGameOver animatedGameOver = new AnimatedGameOver(false);
 						getAnimator().addAnimated(animatedGameOver);
 					} else if (animated instanceof AnimatedBullet) {
 						continue;

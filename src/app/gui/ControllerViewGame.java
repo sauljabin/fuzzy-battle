@@ -21,10 +21,8 @@
 package app.gui;
 
 import java.awt.Color;
-import java.io.File;
 import java.util.Random;
 
-import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.SwingUtilities;
 
@@ -41,6 +39,7 @@ import app.animation.animated.AnimatedLateral;
 import app.animation.animated.AnimatedLattice;
 import app.animation.animated.AnimatedPlayer;
 import app.animation.animated.AnimatedWall;
+import app.util.UtilSound;
 
 public class ControllerViewGame extends Controller implements AnimatedMouseListener {
 
@@ -72,9 +71,9 @@ public class ControllerViewGame extends Controller implements AnimatedMouseListe
 			@Override
 			public void run() {
 				try {
-					engine = AudioSystem.getClip();
-					engine.open(AudioSystem.getAudioInputStream(new File("sound/engine.wav")));
-					engine.loop(Clip.LOOP_CONTINUOUSLY);
+					engine = UtilSound.getClip("sound/engine.wav");
+					if (engine != null)
+						engine.loop(Clip.LOOP_CONTINUOUSLY);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -89,9 +88,9 @@ public class ControllerViewGame extends Controller implements AnimatedMouseListe
 			public void run() {
 				try {
 					Random rand = new Random();
-					music = AudioSystem.getClip();
-					music.open(AudioSystem.getAudioInputStream(new File("sound/game" + (rand.nextInt(Integer.parseInt(Config.get("TOTAL_SONGS"))) + 1) + ".wav")));
-					music.loop(Clip.LOOP_CONTINUOUSLY);
+					music = UtilSound.getClip("sound/game" + (rand.nextInt(Integer.parseInt(Config.get("TOTAL_SONGS"))) + 1) + ".wav");
+					if (music != null)
+						music.loop(Clip.LOOP_CONTINUOUSLY);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
