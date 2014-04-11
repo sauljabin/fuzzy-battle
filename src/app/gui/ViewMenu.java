@@ -37,19 +37,37 @@ public class ViewMenu extends View {
 	private JButton btnConfig;
 	private JButton btnCredits;
 	private JButton btnExit;
+	private JButton btnMembershipFunctions;
+	private JButton btnCalculateDamage;
+	private JButton btnCalculateSpeed;
 
 	@Override
 	public void init() {
-		setSize(400, 400);
+		setSize(400, 450);
 		setLayout(new BorderLayout());
 
-		pnlCenter = new JPanel(new MigLayout("insets 50"));
+		pnlCenter = new JPanel(new MigLayout("insets 30"));
 		add(pnlCenter, BorderLayout.CENTER);
 
 		Font buttonFont = new Font(Font.SANS_SERIF, Font.BOLD, 20);
 
 		btnStart = new JButton();
 		btnStart.setFont(buttonFont);
+
+		btnStart = new JButton();
+		btnStart.setFont(buttonFont);
+
+		btnStart = new JButton();
+		btnStart.setFont(buttonFont);
+
+		btnMembershipFunctions = new JButton();
+		btnMembershipFunctions.setFont(buttonFont);
+
+		btnCalculateDamage = new JButton();
+		btnCalculateDamage.setFont(buttonFont);
+
+		btnCalculateSpeed = new JButton();
+		btnCalculateSpeed.setFont(buttonFont);
 
 		btnConfig = new JButton();
 		btnConfig.setFont(buttonFont);
@@ -60,8 +78,11 @@ public class ViewMenu extends View {
 		btnExit = new JButton();
 		btnExit.setFont(buttonFont);
 
-		String buttonLayout = "width 100%, height 50, wrap 20";
+		String buttonLayout = "width 100%, height 40, wrap 10";
 		pnlCenter.add(btnStart, buttonLayout);
+		pnlCenter.add(btnMembershipFunctions, buttonLayout);
+		pnlCenter.add(btnCalculateDamage, buttonLayout);
+		pnlCenter.add(btnCalculateSpeed, buttonLayout);
 		pnlCenter.add(btnConfig, buttonLayout);
 		pnlCenter.add(btnCredits, buttonLayout);
 		pnlCenter.add(btnExit, buttonLayout);
@@ -70,6 +91,17 @@ public class ViewMenu extends View {
 		addButtonToAction(btnStart);
 		addButtonToAction(btnCredits);
 		addButtonToAction(btnExit);
+		addButtonToAction(btnMembershipFunctions);
+		addButtonToAction(btnCalculateDamage);
+		addButtonToAction(btnCalculateSpeed);
+	}
+
+	public JButton getBtnCalculateSpeed() {
+		return btnCalculateSpeed;
+	}
+
+	public void setBtnCalculateSpeed(JButton btnCalculateSpeed) {
+		this.btnCalculateSpeed = btnCalculateSpeed;
 	}
 
 	@Override
@@ -78,6 +110,9 @@ public class ViewMenu extends View {
 		btnConfig.setText(Translate.get("GUI_CONFIG"));
 		btnCredits.setText(Translate.get("GUI_CREDITS"));
 		btnExit.setText(Translate.get("GUI_EXIT"));
+		btnMembershipFunctions.setText(Translate.get("GUI_MEMBERSHIPFUNCTIONS"));
+		btnCalculateDamage.setText(Translate.get("GUI_CALCULATEDAMAGE"));
+		btnCalculateSpeed.setText(Translate.get("GUI_CALCULATESPEED"));
 	}
 
 	public JButton getBtnStart() {
@@ -94,6 +129,14 @@ public class ViewMenu extends View {
 
 	public JButton getBtnExit() {
 		return btnExit;
+	}
+
+	public JButton getBtnMembershipFunctions() {
+		return btnMembershipFunctions;
+	}
+
+	public JButton getBtnCalculateDamage() {
+		return btnCalculateDamage;
 	}
 
 }

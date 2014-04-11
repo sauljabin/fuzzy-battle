@@ -20,8 +20,8 @@
 
 package app.animation;
 
-import java.awt.Graphics;
-import java.awt.geom.Rectangle2D;
+import java.awt.Graphics2D;
+import java.awt.Shape;
 import java.util.Vector;
 
 public abstract class Animated implements Comparable<Animated> {
@@ -33,6 +33,26 @@ public abstract class Animated implements Comparable<Animated> {
 	private int z;
 	private int width;
 	private int height;
+	private int row;
+	private int column;
+	private int angle;
+	private boolean isAlive;
+
+	public boolean isAlive() {
+		return isAlive;
+	}
+
+	public void setAlive(boolean isAlive) {
+		this.isAlive = isAlive;
+	}
+
+	public int getAngle() {
+		return angle;
+	}
+
+	public void setAngle(int angle) {
+		this.angle = angle;
+	}
 
 	public Animated() {
 		animatedKeyListeners = new Vector<AnimatedKeyListener>();
@@ -122,11 +142,32 @@ public abstract class Animated implements Comparable<Animated> {
 		}
 	}
 
+	public int getRow() {
+		return row;
+	}
+
+	public void setRow(int row) {
+		this.row = row;
+	}
+
+	public synchronized void removeAnimated() {
+		animator.removeAnimated(this);
+		isAlive = false;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+
+	public void setColumn(int column) {
+		this.column = column;
+	}
+
 	public abstract void init();
 
-	public abstract Rectangle2D getShape();
+	public abstract Shape getShape();
 
-	public abstract void paint(Graphics g);
+	public abstract void paint(Graphics2D g);
 
 	public abstract void animate();
 }
