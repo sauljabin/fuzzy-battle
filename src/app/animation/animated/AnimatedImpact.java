@@ -23,13 +23,12 @@ package app.animation.animated;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Shape;
-import java.io.File;
 
-import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 import app.Config;
 import app.animation.Animated;
+import app.util.UtilSound;
 
 public class AnimatedImpact extends Animated {
 
@@ -45,9 +44,14 @@ public class AnimatedImpact extends Animated {
 			@Override
 			public void run() {
 				try {
-					Clip sound = AudioSystem.getClip();
-					sound.open(AudioSystem.getAudioInputStream(new File("sound/explosion.wav")));
-					sound.start();					
+					Clip sound = UtilSound.getClip("sound/explosion.wav");
+					if (sound != null)
+						sound.start();
+
+					if (Config.get("OS").toLowerCase().contains("linux")) {
+						Thread.sleep(1000);
+						sound.close();
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
