@@ -22,6 +22,9 @@ package app.gui;
 
 import javax.swing.SwingUtilities;
 
+import app.Config;
+import net.sourceforge.jFuzzyLogic.FIS;
+
 public class ControllerViewMenu extends Controller {
 
 	private ViewMenu viewMenu;
@@ -43,6 +46,37 @@ public class ControllerViewMenu extends Controller {
 			config();
 		else if (source.equals(viewMenu.getBtnCredits()))
 			credits();
+		else if (source.equals(viewMenu.getBtnMembershipFunctions()))
+			membershipFunctions();
+		else if (source.equals(viewMenu.getBtnCalculateDamage()))
+			calculateDamage();
+		else if (source.equals(viewMenu.getBtnCalculateSpeed()))
+			calculateSpeed();
+	}
+
+	public void calculateDamage() {
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				new ControllerViewCalculateDamage();
+				viewMenu.dispose();
+			}
+		});
+	}
+	
+	public void calculateSpeed() {
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				new ControllerViewCalculateSpeed();
+				viewMenu.dispose();
+			}
+		});
+	}
+
+	public void membershipFunctions() {
+		FIS fis = FIS.load(Config.get("RULES_PATH"), true);
+		fis.chart();
 	}
 
 	public void start() {

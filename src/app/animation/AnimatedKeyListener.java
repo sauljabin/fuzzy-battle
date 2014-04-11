@@ -20,9 +20,11 @@
 
 package app.animation;
 
+import java.awt.event.KeyEvent;
+
 public interface AnimatedKeyListener {
 
-	public void animatedKeyPressed(Animated source);
+	public void animatedKeyPressed(Animated source, KeyEvent e);
 
-	public void animatedKeyReleased(Animated source);
+	public void animatedKeyReleased(Animated source, KeyEvent e);
 }
