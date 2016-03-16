@@ -12,7 +12,7 @@ http://jfuzzylogic.sourceforge.net/
 
 - Copyright: 2014 Saúl Piña <sauljabin@gmail.com>
 - Repository: https://github.com/sauljabin/fuzzy-battle
-- License: GPL 2
+- License: MIT
 - Language: Java
 - IDE: Eclipse
 
