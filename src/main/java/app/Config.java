@@ -11,9 +11,7 @@ package app;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Enumeration;
 import java.util.Properties;
-import java.util.Vector;
 
 public class Config {
 
@@ -28,15 +26,6 @@ public class Config {
 
     public static String get(String key) {
         return properties.getProperty(key);
-    }
-
-    public static Vector<String> getKeys() {
-        Vector<String> vectorKeys = new Vector<>();
-        Enumeration<Object> keys = properties.keys();
-        while (keys.hasMoreElements()) {
-            vectorKeys.add((String) keys.nextElement());
-        }
-        return vectorKeys;
     }
 
 }

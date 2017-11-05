@@ -11,7 +11,7 @@ package app.animation;
 
 public interface AnimatedMouseListener {
 
-    public void animatedMousePressed(Animated source);
+    void animatedMousePressed(Animated source);
 
-    public void animatedMouseReleased(Animated source);
+    void animatedMouseReleased(Animated source);
 }

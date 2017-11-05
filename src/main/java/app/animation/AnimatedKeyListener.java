@@ -13,7 +13,7 @@ import java.awt.event.KeyEvent;
 
 public interface AnimatedKeyListener {
 
-    public void animatedKeyPressed(Animated source, KeyEvent e);
+    void animatedKeyPressed(Animated source, KeyEvent e);
 
-    public void animatedKeyReleased(Animated source, KeyEvent e);
+    void animatedKeyReleased(Animated source, KeyEvent e);
 }

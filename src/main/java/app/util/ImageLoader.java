@@ -1,9 +1,9 @@
 /**
  * Copyright (c) 2014 Saúl Piña <sauljabin@gmail.com>.
  * <p>
- * This file is part of WaspsNestBuilding.
+ * This file is part of FuzzyBattle.
  * <p>
- * WaspsNestBuilding is licensed under The MIT License.
+ * FuzzyBattle is licensed under The MIT License.
  * For full copyright and license information please see the LICENSE file.
  */
 
