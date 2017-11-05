@@ -14,10 +14,20 @@ http://jfuzzylogic.sourceforge.net/
 - Repository: https://github.com/sauljabin/fuzzy-battle
 - License: MIT
 - Language: Java
-- IDE: Eclipse
+
+Comandos
+--------
+
+```
+make run
+
+make clean
+
+make download-lib
+```
 
 
 Screenshots
 ------------
-![](/documents/screenshot-1.png)
-![](/documents/screenshot-2.png)
+![](documents/screenshot-1.png)
+![](documents/screenshot-2.png)
